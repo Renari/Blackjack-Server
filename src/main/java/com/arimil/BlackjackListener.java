@@ -1,6 +1,8 @@
+package com.arimil;
+
+import com.arimil.packets.Message;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
-import packets.Message;
 
 public class BlackjackListener extends Listener {
     @Override

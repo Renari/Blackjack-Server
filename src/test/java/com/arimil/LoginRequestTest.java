@@ -1,11 +1,14 @@
+package com.arimil;
+
+import com.arimil.BlackjackServer;
+import com.arimil.packets.Message;
+import com.arimil.packets.requests.LoginRequest;
 import com.esotericsoftware.kryonet.Client;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.minlog.Log;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import packets.Message;
-import packets.requests.LoginRequest;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
@@ -18,8 +21,8 @@ public class LoginRequestTest {
 
     @Before
     public void setUp() {
-        Log.set(Log.LEVEL_ERROR);
-        BlackjackServer.getInstance(true);
+        Log.set(Log.LEVEL_TRACE);
+        BlackjackServer.getInstance();
     }
 
     @Test

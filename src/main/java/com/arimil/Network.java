@@ -1,8 +1,10 @@
+package com.arimil;
+
+import com.arimil.packets.requests.LoginRequest;
+import com.arimil.packets.response.LoginResponse;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryonet.EndPoint;
 import com.esotericsoftware.minlog.Log;
-import packets.requests.LoginRequest;
-import packets.response.LoginResponse;
 
 class Network {
     static final int PORT = 50236;

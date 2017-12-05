@@ -1,3 +1,5 @@
+package com.arimil;
+
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 import com.esotericsoftware.minlog.Log;
@@ -29,15 +31,6 @@ public class BlackjackServer {
             return instance;
         }
         return instance;
-    }
-
-    static BlackjackServer getInstance(Boolean debug) {
-        if (debug) {
-            Log.set(Log.LEVEL_DEBUG);
-        } else {
-            Log.set(Log.LEVEL_INFO);
-        }
-        return getInstance();
     }
 
     public static void main(String args[]) {

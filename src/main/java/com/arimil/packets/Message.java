@@ -1,4 +1,4 @@
-package packets;
+package com.arimil.packets;
 
 import com.esotericsoftware.kryonet.Connection;
 

@@ -1,8 +1,8 @@
-package packets.requests;
+package com.arimil.packets.requests;
 
+import com.arimil.packets.Message;
+import com.arimil.packets.response.LoginResponse;
 import com.esotericsoftware.kryonet.Connection;
-import packets.Message;
-import packets.response.LoginResponse;
 
 public class LoginRequest extends Message {
     private String username;
