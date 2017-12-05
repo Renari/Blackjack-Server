@@ -6,7 +6,7 @@ import packets.response.LoginResponse;
 
 class Network {
     static final int PORT = 50236;
-    static final int TIMEOUT = 15000;
+    static final int TIMEOUT = 5000;
 
     static void register(EndPoint endpoint) {
         Log.debug("Registering classes");
