@@ -1,4 +1,4 @@
-package com.arimil.packets;
+package com.arimil.blackjackserver.packets;
 
 import com.esotericsoftware.kryonet.Connection;
 

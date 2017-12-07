@@ -1,6 +1,6 @@
-package com.arimil.packets.response;
+package com.arimil.blackjackserver.packets.response;
 
-import com.arimil.packets.Message;
+import com.arimil.blackjackserver.packets.Message;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.minlog.Log;
 

@@ -1,7 +1,7 @@
-package com.arimil;
+package com.arimil.blackjackserver;
 
-import com.arimil.packets.Message;
-import com.arimil.packets.requests.LoginRequest;
+import com.arimil.blackjackserver.packets.Message;
+import com.arimil.blackjackserver.packets.requests.LoginRequest;
 import com.esotericsoftware.kryonet.Client;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;

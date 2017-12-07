@@ -1,7 +1,7 @@
-package com.arimil;
+package com.arimil.blackjackserver;
 
-import com.arimil.packets.requests.LoginRequest;
-import com.arimil.packets.response.LoginResponse;
+import com.arimil.blackjackserver.packets.requests.LoginRequest;
+import com.arimil.blackjackserver.packets.response.LoginResponse;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryonet.EndPoint;
 import com.esotericsoftware.minlog.Log;

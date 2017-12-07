@@ -1,7 +1,7 @@
-package com.arimil.packets.requests;
+package com.arimil.blackjackserver.packets.requests;
 
-import com.arimil.packets.Message;
-import com.arimil.packets.response.LoginResponse;
+import com.arimil.blackjackserver.packets.response.LoginResponse;
+import com.arimil.blackjackserver.packets.Message;
 import com.esotericsoftware.kryonet.Connection;
 
 public class LoginRequest extends Message {
