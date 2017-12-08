@@ -10,7 +10,7 @@ public class BlackjackListener extends Listener {
         //handle message here
         if (o instanceof Message) {
             Message p = (Message) o;
-            p.Process(connection);
+            p.Process(connection, this);
         }
     }
 }
