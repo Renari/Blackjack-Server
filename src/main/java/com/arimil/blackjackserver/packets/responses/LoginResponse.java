@@ -12,7 +12,7 @@ public class LoginResponse extends Message {
 
     @Override
     public boolean Process(Connection c) {
-        Log.info("Login processed");
+        //server does not need to process responses
         return true;
     }
 }
