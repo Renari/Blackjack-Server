@@ -42,7 +42,7 @@ public class LoginRequestTest {
     private class TestListener extends BlackjackListener {
         @Override
         public void received(Connection connection, Object o) {
-            result = ((Message) o).Process(connection);
+            result = ((Message) o).Process(connection, this);
             lock.countDown();
         }
     }

@@ -6,8 +6,20 @@ import com.esotericsoftware.kryonet.Listener;
 
 public class LoginResponse extends Message {
 
+    //TODO: query database for users currency
+    int currency;
+    String errors = "";
+
     public LoginResponse() {
 
+    }
+
+    public LoginResponse(int currency) {
+        this.currency = currency;
+    }
+    
+    public LoginResponse(String errors) {
+        this.errors = errors;
     }
 
     @Override

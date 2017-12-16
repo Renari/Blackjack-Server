@@ -1,7 +1,9 @@
 package com.arimil.blackjackserver.packets.requests;
 
-import com.arimil.blackjackserver.packets.responses.LoginResponse;
+import com.arimil.blackjackserver.User;
+import com.arimil.blackjackserver.UserManager;
 import com.arimil.blackjackserver.packets.Message;
+import com.arimil.blackjackserver.packets.responses.LoginResponse;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 
@@ -21,7 +23,9 @@ public class LoginRequest extends Message {
     @Override
     public boolean Process(Connection c, Listener l) {
         System.out.println("login packet received with details: " + username + ", " + password);
-        c.sendTCP(new LoginResponse());
+        //TODO: change currency to query after checking username and password
+        c.sendTCP(new LoginResponse(50000));
+        UserManager.putUser(c.getID(), new User(username, 50000));
         return true;
     }
 }
