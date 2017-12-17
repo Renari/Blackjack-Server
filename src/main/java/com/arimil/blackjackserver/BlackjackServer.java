@@ -12,25 +12,10 @@ public class BlackjackServer {
     private static BlackjackServer instance;
     private static Server server;
 
-    private BlackjackServer(Listener listener) {
-        if (!startServer(listener)) {
-            RUNNING = false;
-        }
-    }
-
     private BlackjackServer() {
         if (!startServer(new BlackjackListener())) {
             RUNNING = false;
         }
-    }
-
-    static BlackjackServer getInstance() {
-        Log.set(Log.LEVEL_INFO);
-        if (instance == null) {
-            instance = new BlackjackServer();
-            return instance;
-        }
-        return instance;
     }
 
     public static void main(String args[]) {

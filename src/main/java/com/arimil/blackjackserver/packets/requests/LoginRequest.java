@@ -7,6 +7,7 @@ import com.arimil.blackjackserver.packets.Message;
 import com.arimil.blackjackserver.packets.responses.LoginResponse;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
+import com.esotericsoftware.minlog.Log;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,7 +30,7 @@ public class LoginRequest extends Message {
 
     @Override
     public boolean Process(Connection c, Listener l) {
-        System.out.println("login packet received with details: " + username + ", " + password);
+        Log.info("login packet received with details: " + username + ", " + password);
         try {
             String query = "SELECT COUNT(*) AS total FROM users WHERE username = ?";
             PreparedStatement countUser = DatabaseManager.getConnection().prepareStatement(query);
@@ -73,8 +74,10 @@ public class LoginRequest extends Message {
                 }
             }
         } catch (SQLException e) {
+            Log.error(e.getMessage());
             c.sendTCP(new LoginResponse("A SQL exception occurred"));
         } catch (NoSuchAlgorithmException e) {
+            Log.error(e.getMessage());
             c.sendTCP(new LoginResponse("A SHA exception occurred"));
         }
         return false;
