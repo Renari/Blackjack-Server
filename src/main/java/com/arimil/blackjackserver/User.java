@@ -8,6 +8,7 @@ public class User {
     public int bet;
     public int hand;
     public ArrayList<String> cards = new ArrayList<>();
+    public ArrayList<String> dealersCards = new ArrayList<>();
 
     public User(String n, int c) {
         name = n;

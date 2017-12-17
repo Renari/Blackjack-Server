@@ -33,7 +33,7 @@ public class BetRequest extends Message {
         u.cards.add(card);
 
         String dealerCard = GameManager.generateRandomCard();
-        GameManager.dealersCards.add(dealerCard);
+        u.dealersCards.add(dealerCard);
 
         c.sendTCP(new BetResponse(card, dealerCard));
         return true;

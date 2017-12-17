@@ -1,21 +1,22 @@
 package com.arimil.blackjackserver.packets.responses;
 
-
 import com.arimil.blackjackserver.packets.Message;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 
-public class BustResponse extends Message {
-    String card;
+public class HoldResponse extends Message {
+    String[] cards;
     int currency;
+    String result;
 
-    public BustResponse() {
+    public HoldResponse() {
 
     }
 
-    public BustResponse(String card, int currency) {
-        this.card = card;
+    public HoldResponse(String[] dealer, int currency, String result) {
+        this.cards = dealer;
         this.currency = currency;
+        this.result = result;
     }
 
     @Override

@@ -21,13 +21,14 @@ public class UserManager {
     public static void processWinners(int dealer) {
         for (Map.Entry<Integer, User> entry : userMap.entrySet()){
             User u = entry.getValue();
+            int handValue = GameManager.getHandValue(u.cards);
             //winner
-            if ((u.hand > dealer && u.hand <= 21) ||
-                    u.hand <= 21 && dealer > 21) {
+            if ((handValue > dealer && handValue <= 21) ||
+                    handValue <= 21 && dealer > 21) {
                 u.currency += u.bet;
             }
             //lose
-            else if (dealer > u.hand) {
+            else if (dealer > handValue) {
                 u.currency -= u.bet;
             }
             u.bet = 0;

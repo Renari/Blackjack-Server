@@ -2,11 +2,9 @@ package com.arimil.blackjackserver;
 
 import com.arimil.blackjackserver.packets.requests.BetRequest;
 import com.arimil.blackjackserver.packets.requests.HitRequest;
+import com.arimil.blackjackserver.packets.requests.HoldRequest;
 import com.arimil.blackjackserver.packets.requests.LoginRequest;
-import com.arimil.blackjackserver.packets.responses.BetResponse;
-import com.arimil.blackjackserver.packets.responses.BustResponse;
-import com.arimil.blackjackserver.packets.responses.HitResponse;
-import com.arimil.blackjackserver.packets.responses.LoginResponse;
+import com.arimil.blackjackserver.packets.responses.*;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryonet.EndPoint;
 import com.esotericsoftware.minlog.Log;
@@ -19,15 +17,20 @@ class Network {
         Log.debug("Registering classes");
 
         Kryo kryo = endpoint.getKryo();
+
+        kryo.register(String[].class);
+
         // Register all requests
         kryo.register(LoginRequest.class);
         kryo.register(BetRequest.class);
         kryo.register(HitRequest.class);
+        kryo.register(HoldRequest.class);
 
         // Register all responses
         kryo.register(LoginResponse.class);
         kryo.register(BetResponse.class);
         kryo.register(BustResponse.class);
         kryo.register(HitResponse.class);
+        kryo.register(HoldResponse.class);
     }
 }

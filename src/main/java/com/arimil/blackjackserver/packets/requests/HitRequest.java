@@ -20,6 +20,7 @@ public class HitRequest extends Message {
         if(GameManager.getHandValue(u.cards) > 21) {
             u.currency -= u.bet;
             u.bet = 0;
+            u.cards.clear();
             c.sendTCP(new BustResponse(card, u.currency));
         } else {
             c.sendTCP(new HitResponse(card));
