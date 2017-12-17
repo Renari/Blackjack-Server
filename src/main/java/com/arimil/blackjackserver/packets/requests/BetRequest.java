@@ -1,5 +1,6 @@
 package com.arimil.blackjackserver.packets.requests;
 
+import com.arimil.blackjackserver.GameManager;
 import com.arimil.blackjackserver.User;
 import com.arimil.blackjackserver.UserManager;
 import com.arimil.blackjackserver.packets.Message;
@@ -27,7 +28,14 @@ public class BetRequest extends Message {
         if (u.currency < amount)
             return false;
         u.bet = amount;
-        c.sendTCP(new BetResponse());
+
+        String card = GameManager.generateRandomCard();
+        u.cards.add(card);
+
+        String dealerCard = GameManager.generateRandomCard();
+        GameManager.dealersCards.add(dealerCard);
+
+        c.sendTCP(new BetResponse(card, dealerCard));
         return true;
     }
 }
